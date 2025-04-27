@@ -1,21 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Create falling cookies
-  function createCookies() {
-    const container = document.getElementById("cookieContainer");
-    const cookieTypes = ["🍪", "🍩", "🧁", "🥨", "🍬"];
-
-    for (let i = 0; i < 15; i++) {
-      const cookie = document.createElement("div");
-      cookie.className = "cookie";
-      cookie.textContent = cookieTypes[Math.floor(Math.random() * cookieTypes.length)];
-      cookie.style.left = Math.random() * 100 + "vw";
-      cookie.style.fontSize = Math.random() * 20 + 10 + "px";
-      cookie.style.animationDuration = Math.random() * 10 + 10 + "s";
-      cookie.style.animationDelay = Math.random() * 5 + "s";
-      container.appendChild(cookie);
-    }
-  }
-
   // Scroll to top button show/hide
   function toggleScrollToTop() {
     const scrollToTop = document.getElementById("scrollToTop");
@@ -78,9 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Initialize after page fully loaded
-  createCookies();
-  toggleScrollToTop();
-
-  window.addEventListener("scroll", toggleScrollToTop);
+  // Initialize
+  window.addEventListener("load", () => {
+    toggleScrollToTop();
+  });
 });
