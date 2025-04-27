@@ -69,11 +69,3 @@ Website ini bertujuan untuk mensimulasikan pembuatan platform sederhana yang men
 - **Contact:** Tombol WhatsApp untuk komunikasi langsung.
 
 ---
-
-## 📱 Link WhatsApp
-
-Nomor WhatsApp untuk simulasi komunikasi pelanggan:
-
-```plaintext
-https://wa.me/6285211501144
-```
