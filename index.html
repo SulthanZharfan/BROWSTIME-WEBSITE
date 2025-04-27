@@ -7,31 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AlpineJS wajib -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js" defer></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-      @keyframes fallingCookie {
-        0% {
-          transform: translateY(-100px) rotate(0deg);
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(calc(100vh + 100px)) rotate(360deg);
-          opacity: 0;
-        }
-      }
-      .cookie {
-        position: fixed;
-        top: -100px;
-        animation: fallingCookie linear infinite;
-        z-index: 0;
-        pointer-events: none;
-        user-select: none;
-      }
-      body {
-        font-family: "Comic Neue", cursive;
-        overflow-x: hidden;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-[#F5E9DA] text-[#6B4226]">
     <!-- Falling Cookies Background -->
@@ -44,7 +22,22 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <div class="text-3xl font-bold mr-2">🍪</div>
-            <span class="text-2xl font-bold">BROWSTIME</span>
+            <span class="text-2xl font-bold"
+              ><svg width="250" height="60" viewBox="0 0 250 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradTime" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color: #f5c06e; stop-opacity: 1" />
+                    <stop offset="100%" style="stop-color: #ffd95a; stop-opacity: 1" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Gabung teks + stroke border -->
+                <text x="10" y="40" font-family="Arial Black, sans-serif" font-size="30" stroke="#5C4033" stroke-width="3" paint-order="stroke fill" stroke-linejoin="round">
+                  <tspan fill="#8B4513">BROWS</tspan>
+                  <tspan fill="url(#gradTime)">TIME</tspan>
+                </text>
+              </svg>
+            </span>
           </div>
 
           <!-- Desktop Menu -->
@@ -104,7 +97,7 @@
         <div class="md:w-1/2 flex justify-center">
           <div class="relative">
             <div class="w-64 h-64 md:w-80 md:h-80 bg-[#EAD7C2] rounded-full flex items-center justify-center shadow-xl">
-              <img src="https://placeholder.pics/svg/300x300/EAD7C2/6B4226/Cookie" alt="BROWSTIME Cookie" class="w-48 h-48 md:w-60 md:h-60 rounded-full" />
+              <img src="img/WhatsApp Image 2025-04-27 at 10.38.08_13535f1c.jpg" alt="BROWSTIME Cookie" class="w-48 h-48 md:w-60 md:h-60 rounded-full" />
             </div>
             <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#D7A86E] rounded-full opacity-20"></div>
             <div class="absolute -bottom-6 -right-6 w-20 h-20 bg-[#8B5E3C] rounded-full opacity-20"></div>
@@ -121,7 +114,7 @@
           <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
             <div class="relative">
               <div class="w-64 h-64 bg-[#F5E9DA] rounded-3xl flex items-center justify-center shadow-lg border-4 border-[#D7A86E]">
-                <img src="https://placeholder.pics/svg/200x200/EAD7C2/6B4226/Baker" alt="Cookie Baker" class="w-40 h-40 rounded-full" />
+                <img src="img/trias_capybaras.jpg" alt="Cookie Baker" class="w-40 h-40 rounded-full" />
               </div>
               <div class="absolute -top-4 -right-4 w-16 h-16 bg-[#D7A86E] rounded-full opacity-30"></div>
               <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-[#8B5E3C] rounded-full opacity-30"></div>
@@ -143,26 +136,45 @@
       <div class="container mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12">Cookie Quest Selection</h2>
 
-        <!-- GANTI grid jadi flex -->
         <div class="flex flex-wrap justify-center gap-8">
           <!-- Product 1 -->
           <div class="bg-white rounded-3xl p-6 shadow-lg hover:scale-105 hover:rotate-1 transition duration-300 border-2 border-[#EAD7C2] text-center w-[300px]">
-            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center">
-              <img src="https://placeholder.pics/svg/200x200/F5E9DA/6B4226/Choco%20Blast" alt="Choco Blast" class="w-32 h-32 rounded-full" />
+            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center overflow-hidden">
+              <img src="img/HCCC.jpg" alt="Choco Blast" class="w-full h-full object-contain rounded-2xl p-2" />
             </div>
-            <h3 class="text-2xl font-bold mb-2">Choco Blast</h3>
-            <p class="text-[#8B5E3C] mb-4">Double chocolate chunks in a rich cocoa dough. Chocolate lovers unite!</p>
-            <p class="text-xl font-bold text-[#D7A86E]">$12.99</p>
+            <h3 class="text-2xl font-bold mb-2">🍪 Classic Dark Chocolate – Pouch</h3>
+            <p class="text-[#8B5E3C] mb-4">Enjoy the rich, authentic taste of our Classic Dark Chocolate cookies, now packed in a convenient pouch — perfect for your daily snacking adventure!</p>
+            <p class="text-xl font-bold text-[#D7A86E]">Rp.15000</p>
           </div>
 
           <!-- Product 2 -->
           <div class="bg-white rounded-3xl p-6 shadow-lg hover:scale-105 hover:rotate-1 transition duration-300 border-2 border-[#EAD7C2] text-center w-[300px]">
-            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center">
-              <img src="https://placeholder.pics/svg/200x200/F5E9DA/6B4226/Berry%20Boom" alt="Berry Boom" class="w-32 h-32 rounded-full" />
+            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center overflow-hidden">
+              <img src="img/HCCC-T.jpg" alt="Berry Boom" class="w-full h-full object-contain rounded-2xl p-2" />
             </div>
-            <h3 class="text-2xl font-bold mb-2">Berry Boom</h3>
-            <p class="text-[#8B5E3C] mb-4">Mixed berry explosion with white chocolate chips. Fruity and fresh!</p>
-            <p class="text-xl font-bold text-[#D7A86E]">$11.99</p>
+            <h3 class="text-2xl font-bold mb-2">🍪 Classic Dark Chocolate – Jar</h3>
+            <p class="text-[#8B5E3C] mb-4">Dive into the rich, authentic flavor of our Classic Dark Chocolate cookies, neatly stored in an elegant jar — ideal for sharing or savoring at home!</p>
+            <p class="text-xl font-bold text-[#D7A86E]">Rp.35000</p>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="bg-white rounded-3xl p-6 shadow-lg hover:scale-105 hover:rotate-1 transition duration-300 border-2 border-[#EAD7C2] text-center w-[300px]">
+            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center overflow-hidden">
+              <img src="img/HGRC.jpg" alt="Berry Boom" class="w-full h-full object-contain rounded-2xl p-2" />
+            </div>
+            <h3 class="text-2xl font-bold mb-2">🍪 Dark Chocolate Golden Raisin – Pouch</h3>
+            <p class="text-[#8B5E3C] mb-4">Experience the natural sweetness and chewy texture of Dark Chocolate Golden Raisin cookies, freshly sealed in a handy pouch — always ready for your sweet cravings!</p>
+            <p class="text-xl font-bold text-[#D7A86E]">Rp.15000</p>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="bg-white rounded-3xl p-6 shadow-lg hover:scale-105 hover:rotate-1 transition duration-300 border-2 border-[#EAD7C2] text-center w-[300px]">
+            <div class="w-full h-48 bg-[#F5E9DA] rounded-2xl mb-4 flex items-center justify-center overflow-hidden">
+              <img src="img/HGRC-T.jpg" alt="Berry Boom" class="w-full h-full object-contain rounded-2xl p-2" />
+            </div>
+            <h3 class="text-2xl font-bold mb-2">🍪 Dark Chocolate Golden Raisin – Jar</h3>
+            <p class="text-[#8B5E3C] mb-4">Indulge in the unique blend of Dark Chocolate and Golden Raisins, beautifully preserved in a charming jar — perfect to enjoy anytime, anywhere!</p>
+            <p class="text-xl font-bold text-[#D7A86E]">Rp.35000</p>
           </div>
         </div>
       </div>
@@ -173,31 +185,42 @@
       <div class="container mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12">Find Our Cookie Castle</h2>
         <div class="flex flex-col md:flex-row">
+          <!-- MAPS KIRI -->
           <div class="md:w-1/2 mb-8 md:mb-0 md:pr-6">
             <div class="bg-white rounded-3xl p-4 shadow-lg h-full border-2 border-[#D7A86E]">
-              <div class="w-full h-64 md:h-full bg-[#F5E9DA] rounded-2xl flex items-center justify-center">
-                <p class="text-[#8B5E3C]">Google Maps Embed Here</p>
+              <div class="w-full h-64 md:h-full bg-[#F5E9DA] rounded-2xl overflow-hidden flex items-center justify-center">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10228.810181976074!2d106.7334464!3d-6.5802215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c4cf81421f4b%3A0xfc1a3cac574fe110!2sPerumahan%20IPB%20Alam%20Sinarsari!5e1!3m2!1sid!2sid!4v1745738021373!5m2!1sid!2sid"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
+
+          <!-- ADDRESS KANAN -->
           <div class="md:w-1/2 md:pl-6">
             <div class="bg-white rounded-3xl p-8 shadow-lg h-full border-2 border-[#D7A86E]">
               <h3 class="text-2xl font-bold mb-4">BROWSTIME Headquarters</h3>
               <p class="text-lg text-[#8B5E3C] mb-6">
                 <span class="font-bold">Address:</span><br />
-                123 Cookie Lane<br />
-                Sweetville, SV 98765<br />
-                Land of Ooo
+                Jl. Tanjakan Dramaga No.19,<br />
+                Sinar Sari, Kec. Dramaga, <br />
+                Kabupaten Bogor, Jawa Barat 16680.
               </p>
               <p class="text-lg text-[#8B5E3C] mb-6">
                 <span class="font-bold">Hours:</span><br />
-                Monday-Friday: 9am - 7pm<br />
-                Saturday: 10am - 8pm<br />
-                Sunday: 11am - 5pm
+                Monday-Friday: 8am - 5pm<br />
+                Saturday: 9am - 5pm<br />
+                Sunday: Closed ❌📛🛑⭕❗⛔
               </p>
               <p class="text-lg text-[#8B5E3C]">
                 <span class="font-bold">Special Note:</span><br />
-                Look for the giant cookie-shaped door! If you see the Candy Kingdom, you've gone too far.
+                Wanna make your day extra crunchy? 🍪✨ Order now through our WhatsApp! Good Times. Great Brownies. With Bro!
               </p>
             </div>
           </div>
@@ -259,7 +282,7 @@
               <div class="text-3xl font-bold text-[#D7A86E] mr-2">🍪</div>
               <span class="text-2xl font-bold text-[#D7A86E]">BROWSTIME</span>
             </div>
-            <p class="mt-2 text-[#EAD7C2]">Edible adventures since 2023</p>
+            <p class="mt-2 text-[#EAD7C2]">Edible adventures since 2025</p>
           </div>
           <div class="flex space-x-6">
             <a href="#" class="text-[#D7A86E] hover:text-white transition duration-300">
@@ -286,72 +309,62 @@
           </div>
         </div>
         <div class="mt-8 text-center text-[#EAD7C2]">
-          <p>&copy; 2023 BROWSTIME. All rights reserved. | Made with ❤️ and 🍪</p>
+          <p>&copy; 2025 BROWSTIME. All rights reserved. | Made with ❤️ and 🍪</p>
         </div>
       </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-[#D7A86E] text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition duration-300 hover:scale-110">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-      </svg>
-    </button>
+    <!-- Audio Element -->
+    <audio id="mySong" src="song/SpotiDownloader.com - Bokutachi Capybara - Capybara Shiikuiinnchou.mp3" preload="auto" loop></audio>
 
-    <script>
-      // Create falling cookies
-      function createCookies() {
-        const container = document.getElementById("cookieContainer");
-        const cookieTypes = ["🍪", "🍩", "🧁", "🥨", "🍬"];
+    <!-- Scroll + Music Button Wrapper -->
+    <div x-data="{ scrolled: false, expanded: false, isPlaying: false }" x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 100 })" class="fixed bottom-8 right-8 flex items-center space-x-2 z-50">
+      <!-- Scroll to Top Button -->
+      <button x-show="scrolled && expanded" x-transition @click="window.scrollTo({ top: 0, behavior: 'smooth' })" class="w-12 h-12 bg-[#D7A86E] text-white rounded-full shadow-lg flex items-center justify-center">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
 
-        for (let i = 0; i < 15; i++) {
-          const cookie = document.createElement("div");
-          cookie.className = "cookie";
-          cookie.textContent = cookieTypes[Math.floor(Math.random() * cookieTypes.length)];
-          cookie.style.left = Math.random() * 100 + "vw";
-          cookie.style.fontSize = Math.random() * 20 + 10 + "px";
-          cookie.style.animationDuration = Math.random() * 10 + 10 + "s";
-          cookie.style.animationDelay = Math.random() * 5 + "s";
-          container.appendChild(cookie);
-        }
-      }
+      <!-- Music Toggle Button -->
+      <button
+        x-show="scrolled && expanded"
+        x-transition
+        id="musicButton"
+        @click="
+            const audio = document.getElementById('mySong');
+            if (audio.paused) {
+              audio.play();
+              isPlaying = true;
+            } else {
+              audio.pause();
+              isPlaying = false;
+            }
+          "
+        :class="{ 'animate-beat': isPlaying }"
+        class="w-12 h-12 bg-[#D7A86E] text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M9 19V6h13v2h-11v11h-2z" />
+          <circle cx="5" cy="19" r="3" />
+        </svg>
+      </button>
 
-      // Scroll to top button
-      function toggleScrollToTop() {
-        const scrollToTop = document.getElementById("scrollToTop");
-        if (window.scrollY > 300) {
-          scrollToTop.classList.remove("opacity-0", "invisible");
-          scrollToTop.classList.add("opacity-100", "visible");
-        } else {
-          scrollToTop.classList.remove("opacity-100", "visible");
-          scrollToTop.classList.add("opacity-0", "invisible");
-        }
-      }
-
-      // Smooth scrolling for navigation
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Initialize
-      window.addEventListener("load", () => {
-        createCookies();
-        toggleScrollToTop();
-      });
-
-      window.addEventListener("scroll", toggleScrollToTop);
-
-      document.getElementById("scrollToTop").addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
+      <!-- Main Toggle Button (Titik Tiga) -->
+      <button x-show="scrolled" @click="expanded = !expanded" x-transition class="w-14 h-14 bg-[#D7A86E] text-white rounded-full shadow-lg flex items-center justify-center">
+        <template x-if="!expanded">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="2"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+            <circle cx="19" cy="12" r="2"></circle>
+          </svg>
+        </template>
+        <template x-if="expanded">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </template>
+      </button>
+    </div>
   </body>
 </html>
