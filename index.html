@@ -49,6 +49,12 @@
             <a href="#contact" class="font-bold hover:text-[#D7A86E] hover:scale-110 transition duration-300">Contact</a>
           </div>
 
+          <!-- Cart Icon Button -->
+          <div class="relative cursor-pointer" onclick="toggleCart()">
+            <span class="text-3xl">🛒</span>
+            <span id="cart-count" class="absolute -top-1 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </div>
+
           <!-- Mobile Hamburger Button -->
           <div class="md:hidden">
             <button @click="open = !open" class="focus:outline-none">
@@ -153,6 +159,9 @@
             <p class="text-[#8B5E3C] mb-4">Enjoy the rich, authentic taste of our Classic Dark Chocolate cookies, now packed in a convenient pouch — perfect for your daily snacking adventure!</p>
             <p class="text-xl font-bold text-[#D7A86E]">Rp.15000</p>
             <p class="text-xl font-bold text-[#D7A86E]">(90 grams) – 10 pcs</p>
+
+            <!-- Tombol keranjang -->
+            <button onclick="addToCart('Classic Dark Chocolate – Pouch', 15000)" class="mt-4 bg-[#D7A86E] hover:bg-[#C2955E] text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">🛒 Tambah ke Keranjang</button>
           </div>
 
           <!-- Product 2 -->
@@ -164,6 +173,9 @@
             <p class="text-[#8B5E3C] mb-4">Dive into the rich, authentic flavor of our Classic Dark Chocolate cookies, neatly stored in an elegant jar — ideal for sharing or savoring at home!</p>
             <p class="text-xl font-bold text-[#D7A86E]">Rp.35000</p>
             <p class="text-xl font-bold text-[#D7A86E]">(180 grams) – 18-20 pcs</p>
+
+            <!-- Tombol keranjang -->
+            <button onclick="addToCart('Classic Dark Chocolate – Jar', 35000)" class="mt-4 bg-[#D7A86E] hover:bg-[#C2955E] text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">🛒 Tambah ke Keranjang</button>
           </div>
 
           <!-- Product 3 -->
@@ -175,6 +187,11 @@
             <p class="text-[#8B5E3C] mb-4">Experience the natural sweetness and chewy texture of Dark Chocolate Golden Raisin cookies, freshly sealed in a handy pouch — always ready for your sweet cravings!</p>
             <p class="text-xl font-bold text-[#D7A86E]">Rp.15000</p>
             <p class="text-xl font-bold text-[#D7A86E]">(90 grams) – 10 pcs</p>
+
+            <!-- Tombol keranjang -->
+            <button onclick="addToCart('Dark Chocolate Golden Raisin – Pouch', 15000)" class="mt-4 bg-[#D7A86E] hover:bg-[#C2955E] text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">
+              🛒 Tambah ke Keranjang
+            </button>
           </div>
 
           <!-- Product 4 -->
@@ -186,6 +203,9 @@
             <p class="text-[#8B5E3C] mb-4">Indulge in the unique blend of Dark Chocolate and Golden Raisins, beautifully preserved in a charming jar — perfect to enjoy anytime, anywhere!</p>
             <p class="text-xl font-bold text-[#D7A86E]">Rp.35000</p>
             <p class="text-xl font-bold text-[#D7A86E]">(180 grams) – 18-20 pcs</p>
+
+            <!-- Tombol keranjang -->
+            <button onclick="addToCart('Dark Chocolate Golden Raisin – Jar', 35000)" class="mt-4 bg-[#D7A86E] hover:bg-[#C2955E] text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">🛒 Tambah ke Keranjang</button>
           </div>
         </div>
       </div>
@@ -377,6 +397,21 @@
         </template>
       </button>
     </div>
+
+    <!-- Cart Dropdown -->
+    <div id="cart-dropdown" class="hidden fixed top-20 right-6 w-80 bg-white border border-[#D7A86E] rounded-lg shadow-lg p-4 z-50 text-sm">
+      <h3 class="text-lg font-bold mb-2">Keranjang</h3>
+      <div id="cart-items" class="space-y-2 max-h-64 overflow-y-auto"></div>
+      <hr class="my-2" />
+      <div class="flex justify-between items-center">
+        <button onclick="clearCart()" class="text-red-500 text-xs hover:underline">Hapus Semua</button>
+        <button onclick="checkoutWhatsApp()" class="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-600 text-xs">Checkout WA</button>
+      </div>
+    </div>
+
+    <!-- Popup Notification -->
+    <div id="cart-toast" class="fixed bottom-6 right-6 bg-[#D7A86E] text-white text-sm font-bold px-4 py-2 rounded-lg shadow-lg z-50 opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">Ditambahkan ke keranjang!</div>
+
     <script>
       // Create falling cookies
       function createCookies() {
