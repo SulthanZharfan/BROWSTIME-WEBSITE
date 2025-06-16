@@ -175,7 +175,7 @@ function checkoutWhatsApp() {
   });
 
   message += `\nTotal: Rp${total.toLocaleString()}`;
-  const waNumber = "6281287192688"; // Ganti dengan nomor asli
+  const waNumber = "6281324368243"; // Ganti dengan nomor asli
   const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
   window.open(waURL, "_blank");
 }
